@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/EvegeniyNekrasov/go/cryptomasters/api"
+)
 
 func main() {
-	fmt.Println("hola")
+	ans, _ := api.GetRate("BTC")
+	fmt.Println(ans)
 }
