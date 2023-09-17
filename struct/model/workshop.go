@@ -8,6 +8,9 @@ type Workshop struct {
 	Date   time.Time
 }
 
+func (c Workshop) SignUp() bool {
+	return true
+}
 
 // Factory
 func NewWorkshop(name string, instructor Instructor) Workshop {
