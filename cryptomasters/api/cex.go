@@ -16,6 +16,9 @@ const apiUrl = "https://cex.io/api/ticker/%s/USD"
 // we are reciving a pointer to datatypes.Rate so we can 
 // return a nil if there is an error
 func GetRate(currency string) (*datatypes.Rate, error) {
+	if len(currency) != 3 {
+		return nil, fmt.Errorf("3 characteres required; %d received", len(currency))
+	}
 	res, err := http.Get(fmt.Sprintf(apiUrl, strings.ToUpper(currency)))
 	if err != nil {
 		return nil, err
